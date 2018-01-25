@@ -57,9 +57,15 @@ Flashback_Kidnapping_Pusles_10 = u"Alteza, para mi ese lugar es muy importante. 
 Flashback_Kidnapping_Melisenda_11 = u"¡GUARDIAS! ¡HAY UN HOMBRE CABRA LLAMADO PUSLES EN MIS APOSENTOS!"
 Flashback_Kidnapping_Pusles_11 = u"Bien, si estas son las circunstancias, princesa Melisenda, voy a proceder a secuestraros."
 Flashback_Kidnapping_Melisenda_12 = u"¡No! ¡Apartate de mi, siervo! ¡Noooo! ¡Bájame, no soy un saco de patatas real! ¡Mi padre se enterará de esto! ¡Sir Frederick Von Hut, usa triturar!"
-Flashback_Kidnapping_Pusles_12 = u"Cuento con ello, princesa. ¡Auh! Apartese Sir Frederick. Le recomiendo que se agarre fuerte alteza, vamos a saltar por la ventana."
+Flashback_Kidnapping_Pusles_12 = u"Cuento con ello, princesa. ¡Auh! Apartese Sir Frederick. Le recomiendo que se agarre fuerte alteza, vamos a saltar por la ventana. Y por cierto, es PuZles"
 Flashback_Kidnapping_Melisenda_13 = u"¿¡La ventana, has perdido la cabeza!? ¡Ni se te ocurraaaaaaaaaaaaaaaaaaa!"
 
 # Entra minijuego
 
+# guarida de Pusles
 
+Flashback_DarkTower_Narrador_1 = u"2 días después"
+Flashback_DarkTower_Pusles_1 = u"¡Oh, por fin viene un emisario de palacio, comenzaba a pensar que el rey Sapiensa no intentaría negociar el rescate de su hija!"
+Flashback_DarkTower_Emisaria_1 = u"Es esta la guarida del señor Pusles, culpable del secuestro de la princesa Melisenda"
+Flashback_DarkTower_Pusles_2 = u"Sí, y yo soy el señor PuZles, no Pusles. Y bien, ¿Está el rey Sapiensa dispuesto a negociar el rescate de su hija?"
+Flashback_DarkTower_Emisaria_2 = u"Eh... No, de hecho, el rey me envía a traerle a la princes sus pertenencias para que pueda instalarse permanentemente en su guarida, señor... Pusles."
