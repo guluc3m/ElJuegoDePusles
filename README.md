@@ -1,4 +1,4 @@
 # RenpyGame
 Visual Novel made in Renpy
 
-You must clone in your renpy folder :)
+You must clone it in your RenPy folder :)
