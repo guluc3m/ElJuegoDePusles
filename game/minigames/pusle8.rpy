@@ -29,14 +29,28 @@ init python:
 
         def move(self, keys, board):
             if keys[K_d] and self.col<len(board[0])-1:
+                self.col+=1
+                self.centerx+=self.height
+                board[self.row][self.col+1].col-=1
+                board[self.row][self.col+1].centerx-=self.height
 
-            if keys[K_a] and self.col<len(board[0])-1:
+            if keys[K_a] and self.col>0:
+                self.col-=1
+                self.centerx-=self.height
+                board[self.row][self.col-1].col+=1
+                board[self.row][self.col-1].centerx+=self.height
 
-            if keys[K_w] and self.col<len(board[0])-1:
+            if keys[K_w] and self.row>0:
+                self.row-=1
+                self.centery-=self.height
+                board[self.row-1][self.col].row+=1
+                board[self.row-1][self.col].centery+=self.height
 
-            if keys[K_s] and self.col<len(board[0])-1:
-
-
+            if keys[K_s] and self.row<len(board[0])-1:
+                self.row+=1
+                self.centery+=self.height
+                board[self.row+1][self.col].row-=1
+                board[self.row+1][self.col].centery-=self.height
 
     class White(Cell):
         def __init__(self, id, path, i, j, px, py):
@@ -52,9 +66,40 @@ init python:
     class Pusle8(renpy.Displayable):
 
         #Debe sobreescribirse el constructor
-        def __init__(self, image, **kwargs):
+        def __init__(self, image, n, divisiones, **kwargs):
+            self.image=image
+            self.board=None
+            self.n=n
+            self.divisiones=divisiones
             pass
 
+        def create_board(self, board, image):
+
+            counter=0
+            filas=0
+            for row in board:
+                for cell in row
+                    cell.id=counter
+                    cell.image=image.subsurface(contador*100, filas*100, 100, 100)
+                    counter+=1
+                filas+=1
+
+            lista = {"a", "s", "w", "d"}
+            i=0
+            while(i<10)
+                cell.move(random.choice(lista), board)
+                i+=1
+
+        def check(self, board):
+            counter=0
+            for col in board:
+                for cell in col
+                    if(cell.id=counter):
+                        counter+=1
+                        continue
+                    else:
+                        return False
+            return True
         '''
         Renderiza el objeto en la escena.
         Heredado de renpy.Displayable
