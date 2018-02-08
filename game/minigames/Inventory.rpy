@@ -1,6 +1,7 @@
 init python:
 
-#https://lemmasoft.renai.us/forums/viewtopic.php?f=8&t=15475
+#https://www.youtube.com/watch?v=kSO5iJGGFK0
+#K_i sirve para capturar por pantalla
 
     import random
     import pygame_sdl2 as pygame
@@ -14,8 +15,6 @@ init python:
             self.my_items = []
             self.max_size=15
             self.image=Image("images/Inventario/background.jpg")
-            self.rows=3
-            self.columns=5
             self.px_1=234
             self.py_1=186
         def has_item(self, item):
@@ -23,10 +22,10 @@ init python:
                 return True
             else:
                 return False
-        def add_item(self, item):
+        def add_item(self, Item):
             if len(my_items) < max_size:
-                if has_item(item.name) == False:
-                    self.my_items.append(item)
+                if has_item(Item.name) == False:
+                    self.my_items.append(Item)
                     return True
                 else:
                     print "Ya tienes este objeto en tu inventario"
@@ -37,20 +36,27 @@ init python:
         def draw(self, screen, st, at, image):
             pi = renpy.render(self.image, WIDTH, HEIGHT, st, at)
             screen.blit(pi, (int(self.centerx), int(self.centery)))
-            my_items=
             dist_x=195
             dist_y=195
-            #Vamos a decir que el centro del objeto es x y para colocarlo vamos a poner my_items[posición].draw((x+distanciax)*posición)
-            #para ponerlo al lado del objeto anterior y si llega al final variar la altura y volver al ancho del principio
-            #Así se van a ir reordenando todo el rato
+            centr_x=77
+            centr_y=78
+            altura = 0
+            posicion=0
+            for item in my_items:
+                #Pintamos cada objeto
+                item.draw(pi, (centr_x+dist_x)*(posicion+1),
+                (centr_y+dist_y)*altura)
+                posicion+=1
+                #Hacemos salto de línea si llega al final de la misma
+                if posicion==5 or posicion==10:
+                    altura+=1
+                    posicion=0
 
     class Item(object):
-        def __init__(self, name, image, px, py):
+        def __init__(self, name, image):
             self.arg = arg
             self.name=name
-            self.image=image
-            self.centerx = px
-            self.centery = py
+            self.image=Image(image)
             #self.description
         def draw(self, screen, st, at):
             pi = renpy.render(self.image, WIDTH, HEIGHT, st, at)
@@ -58,8 +64,4 @@ init python:
         def use():
             pass
 
-    class Cell(object):
-        def __init__(self):
-            self.px=71
-            self.py=78
-            self.placed=false
+    class #Copia el PongDisplayable
