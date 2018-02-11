@@ -1,0 +1,4 @@
+alto:155px
+ancho:141px
+distancia_ancho:191px
+distancia_alto:195px
