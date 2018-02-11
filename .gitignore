@@ -6,3 +6,4 @@ traceback.txt
 *.save
 blender/objs/cache*
 blender/objs/*.blend1
+game/saves/*
