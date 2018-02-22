@@ -1,7 +1,7 @@
 init python:
 
-#https://www.youtube.com/watch?v=kSO5iJGGFK0
-#K_i sirve para capturar por pantalla
+    #https://www.youtube.com/watch?v=kSO5iJGGFK0
+    #K_i sirve para capturar por pantalla
 
     import random
     import pygame_sdl2 as pygame
@@ -17,35 +17,39 @@ init python:
             self.image=Image("images/Inventario/background.jpg")
             self.px_1=234
             self.py_1=186
+
         def has_item(self, item):
             if item in my_items:
                 return True
             else:
                 return False
+
         def add_item(self, Item):
             if len(my_items) < max_size:
                 if has_item(Item.name) == False:
                     self.my_items.append(Item)
                     return True
                 else:
-                    print "Ya tienes este objeto en tu inventario"
+                    print( "Ya tienes este objeto en tu inventario")
                     return False
             else:
-                print "No puedes guardar ese objeto porque ya tienes demasiados"
+                print( "No puedes guardar ese objeto porque ya tienes demasiados")
                 return False
-        def draw(self, screen, st, at, image):
+
+        def draw(self, screen, st, at):
             pi = renpy.render(self.image, WIDTH, HEIGHT, st, at)
-            screen.blit(pi, (int(self.centerx), int(self.centery)))
             dist_x=195
             dist_y=195
             centr_x=77
             centr_y=78
             altura = 0
             posicion=0
-            for item in my_items:
+            screen.blit(pi, (int(centr_x), int(centr_y)))
+            for item in self.my_items:
                 #Pintamos cada objeto
-                item.draw(pi, (centr_x+dist_x)*(posicion+1),
-                (centr_y+dist_y)*altura)
+                item.centerx = (centr_x+dist_x)*(posicion+1)
+                item.centery = (centr_y+dist_y)*altura
+                item.draw(screen, st, at)
                 posicion+=1
                 #Hacemos salto de línea si llega al final de la misma
                 if posicion==5 or posicion==10:
@@ -57,11 +61,47 @@ init python:
             self.arg = arg
             self.name=name
             self.image=Image(image)
-            #self.description
+            self.centerx = 10
+            self.centery = 10
+
         def draw(self, screen, st, at):
             pi = renpy.render(self.image, WIDTH, HEIGHT, st, at)
             screen.blit(pi, (int(self.centerx), int(self.centery)))
+
         def use():
             pass
 
-    class #Copia el PongDisplayable
+    class InventoryDisplayable(renpy.Displayable):
+        def __init__(self):
+            renpy.Displayable.__init__(self)
+
+            "Cargamos el inventario"
+            self.inventory = Inventory()
+            self.oldst = None
+
+
+        def render(self, width, height, st, at):
+            r=renpy.Render(width, height)
+
+            self.oldst = st
+
+            #if self.oldst is None:
+            #    self.oldst = st
+
+            renpy.redraw(self, 0)
+
+            self.inventory.draw(r, st, at)
+
+            return r
+
+
+        def event(self, ev, x, y, st):
+            keys=pygame.key.get_pressed()
+            #dtime = st -self.oldst
+            if keys[K_i]:
+                return 0
+            else:
+                raise renpy.IgnoreEvent()
+
+        def visit(self):
+            return []

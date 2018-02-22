@@ -99,7 +99,7 @@ init python:
         def randomize(self):
             lista = {"a", "s", "w", "d"}
             i=0
-            while(i<10)
+            while(i<10):
                 direction=random.choice(lista)
                 if(not((last=="a" and direction=="d")or
                     (last=="s" and direction=="w")or
@@ -113,8 +113,8 @@ init python:
         def check(self, board):
             counter=0
             for col in board:
-                for cell in col
-                    if(cell.id=counter):
+                for cell in col:
+                    if(cell.id==counter):
                         counter+=1
                         continue
                     else:
