@@ -17,7 +17,7 @@ init python:
             self.height = HEIGHT/6
 
 
-        def mover(self, time, keys):
+    #    def mover(self, time, keys):
 
 
 
