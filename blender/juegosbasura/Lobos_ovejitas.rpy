@@ -35,12 +35,12 @@ init python:
             #    if keys[K_LEFT] && self.centerx >= WEIGHT/4*3:  #Orilla izquierda
             #        self.centerx = WEIGHT/4
 
-            def draw(self, screen, st, at):
-                pi = renpy.render(self.image, WIDTH, HEIGHT, st, at)
+        def draw(self, screen, st, at):
+            pi = renpy.render(self.image, WIDTH, HEIGHT, st, at)
 
-                # renpy.render returns a Render object, which we can
-                # blit to the Render we're making.
-                screen.blit(pi, (int(self.centerx), int(self.centery)))
+            # renpy.render returns a Render object, which we can
+            # blit to the Render we're making.
+            screen.blit(pi, (int(self.centerx), int(self.centery)))
 
     class Lobos():
         def _init_(self, px):
@@ -49,7 +49,7 @@ init python:
             self.centery = HEIGHT/2  #Lo sitúo a la izquierda por debajo de la mitad de la pantalla
             self.height = HEIGHT/6
             self.width = WIDTH/10  #Por ejemplo
-            self.selected = False;
+            self.selected = False
 
 
         def mover(self, time, keys):
@@ -75,7 +75,7 @@ init python:
             self.centery = HEIGHT/2 -5 #Lo sitúo debajo de los lobos
             self.height = HEIGHT/6
             self.width = WIDTH/10  #Por ejemplo
-            self.selected = False;
+            self.selected = False
 
         def mover(self, time, keys):
             if(self.selected == True)
@@ -97,6 +97,7 @@ init python:
 
         def __init__(self):
 
+            pygame.mouse.set_visible()
             # Pass additional properties on to the renpy.Displayable
             # constructor.
             renpy.Displayable.__init__(self)
@@ -115,6 +116,13 @@ init python:
             for i in range(0,3):
                 lobitos.append(Ovejas())
 
+
+            def events(): #Clicar sobre animalicos
+                if pygame.mouse.get_pressed():
+                    for i in range(0,3):
+                        if pygame.mouse.get_pos()[0] == lobitos[i].self.centerx &&  pygame.mouse.get_pos()[1] == lobitos[i].self.centery:
+                            lobitos[i].self.centerx = 
+                        #Igualar la pos raton a animalicos para ponerlos sobre la balsa
 
             def render(self, width, height, st, at):
                 # Similar al screen de pygame
