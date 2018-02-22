@@ -4,3 +4,6 @@ traceback.txt
 *.rpyc
 *.rpyb
 *.save
+blender/objs/cache*
+blender/objs/*.blend1
+game/saves/*

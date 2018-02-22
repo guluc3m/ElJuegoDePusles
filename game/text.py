@@ -68,12 +68,12 @@ Flashback_DarkTower1_Narrador_1 = u"2 días después"
 Flashback_DarkTower1_Pusles_1 = u"¡Oh, por fin viene un emisario de palacio, comenzaba a pensar que el rey Sapiensa no intentaría negociar el rescate de su hija!"
 Flashback_DarkTower1_Emisaria_1 = u"Es esta la guarida del señor Pusles, culpable del secuestro de la princesa Melisenda"
 Flashback_DarkTower1_Pusles_2 = u"Sí, y yo soy el señor PuZles, no Pusles. Y bien, ¿Está el rey Sapiensa dispuesto a negociar el rescate de su hija?"
-Flashback_DarkTower1_Emisaria_2 = u"Eh... No. De hecho, el rey me envía a traerle a la princes sus pertenencias para que pueda instalarse permanentemente en su guarida, señor... Pusles."
-Flashback_DarkTower1_Pusles_3 = u"... Es una broma ¿verdad?
+Flashback_DarkTower1_Emisaria_2 = u"Eh... No. De hecho, el rey me envía a traerle a la princesa sus pertenencias para que pueda instalarse cómodamente en su guarida, señor... Pusles."
+Flashback_DarkTower1_Pusles_3 = u"... Es una broma ¿verdad?"
 Flashback_DarkTower1_Emisaria_3 = u"Para nada señor Pusles. El rey Sapiensa estaba teniendo serios problemas para casar a su hija. La princesa Melisenda es una mujer de caracter y con mucha determinación. Encontrar un marido de su gusto aún no ha sido posible y el rey tiene muchas tareas como soberano para dedicarle el tiempo que merece."
 Flashback_DarkTower1_Pusles_4 = u"Esto no está pasando..."
 Flashback_DarkTower1_Emisaria_4 = u"Por ello el rey ha decidido que ya que usted ha mostrado tanto interés en preservar la riqueza cultural del reino y es una de las personas más refinadas que en el habitan. Sería el mejor tutor que podría tener ahora la princesa Melisenda para prepararse como heredera"
-Flashback_DarkTower1_Pusles_5 = u"¡Pero esto no era lo que había planeado! ¡El rey Sapiensa debería anteponer la seguridad de la princesa Melisenda a caulquier cosa!"
+Flashback_DarkTower1_Pusles_5 = u"¡Pero esto no era lo que yo había planeado! ¡El rey Sapiensa debería anteponer la seguridad de la princesa Melisenda a caulquier cosa!"
 Flashback_DarkTower1_Emisaria_5 = u"Oh, y así es señor Pusles. El rey Sapiensa confia en que usted es un honorable caballero que no le hará ningún mal a la princesa. Aún así, me ha pedido que le comunique que en caso de ocurrirle algo a su querida hija, la perdida de su establecimiento favorito será el menor de sus problemas."
 Flashback_DarkTower1_Pusles_6 = u"... Esto no está pasando."
 Flashback_DarkTower1_Emisaria_6 = u"Bueno, yo ya he terminado mi trabajo. Que tenga un buen día señor Pusles."
@@ -83,12 +83,57 @@ Flashback_DarkTower2_Melisenda_1 = u"¿Que querían Pusles? ¿Te han traido alg�
 Flashback_DarkTower2_Pusles_1 = u"..."
 Flashback_DarkTower2_Melisenda_2 = u"¡Mi maleta real! ¿De donde la has sacado?"
 Flashback_DarkTower2_Pusles_2 = u"Ha venido una emisaria de palacio y..."
-Flashback_DarkTower2_Melisenda_3 = u"¡Wau, mira mis pijamas favoritos! ¡Y mis vestidos favoritos! ¡Y mis juegos favoritos! A estos ya verás como te gano, sere la princesa de Sapiensa pero soy la reina del Aviador Loco.
+Flashback_DarkTower2_Melisenda_3 = u"¡Wau, mira mis pijamas favoritos! ¡Y mis vestidos favoritos! ¡Y mis juegos favoritos! A estos ya verás como te gano, en Sapiensa seré sólo la princesa, pero en el Aviador Loco soy la reina"
 Flashback_DarkTower2_Pusles_3 = u"Princesa Melisenda, creo que el rey ha interpretado mal mi mensaje y..."
-Flashback_DarkTower2_Melisenda_4 = u"¡¡¡Sir Frederick Von Hut!!! ¡No sabes cuanto te he echado de menos! Ya verás que bien se está aquí, Pusles tiene un montón de juguetes.
+Flashback_DarkTower2_Melisenda_4 = u"¡¡¡Sir Frederick Von Hut!!! ¡No sabes cuanto te he echado de menos! Ya verás que bien se está aquí, Pusles tiene un montón de juguetes."
 Flashback_DarkTower2_Pusles_4 = u"De acuerdo, hasta aquí hemos llegado. Princesa Melisenda, tenemos que hablar."
 Flashback_DarkTower2_Melisenda_5 = u"Mejor luego, ahora quiero jugar con Sir Frederick"
 Flashback_DarkTower2_Pusles_5 = u"¡No! Su padre, el rey, me ha asignado, en contra de todas mis espectativas, su cuidado e instrucción como soberana. Por lo que mientras que residais en esta, mi guarida, acatareis mis normas."
-Flashback_DarkTower2_Melisenda_6 = u"¡No quiero! ¡Soy la princesa, no tengo que obedecer a nadie!
+Flashback_DarkTower2_Melisenda_6 = u"¡No quiero! ¡Soy la princesa, no tengo que obedecer a nadie!"
 Flashback_DarkTower2_Pusles_6 = u"Es verdad que sois la princesa Melisenda, pero hasta que volvais al castillo yo soy la única autoridad, porque, aunque parezca que nadie se lo toma en serio, os he secuestrado y sois mi prisionera."
-Flashback_DarkTower2_Melisenda_7 = u"¡Pues Patatas!"
+Flashback_DarkTower2_Melisenda_7 = u"¡Pues Patatas!" #Discusión para la que ahora no estoy inspirado.
+
+
+Flashback_DarkTower2_Melisenda = u"Si yo no tengo problema en casarme, pero es que nadie cumple mis espectativas."
+
+Flashback_DarkTower2_Pusles = u"¿Y cuáles son sus espectativas?"
+
+Flashback_DarkTower2_Melisenda = u"Pues... Quiero alguien a quien le gusten los animales, como a mi. Quiero alguien que sea listo y tenga muchos juegos, como tú, y debería ser alguien responsable y con presencia para ayudarme a regir sapiensa y que mi padre esté ogulloso y feliz."
+
+Flashback_DarkTower2_Pusles = u"... Sabe princesa Melisenda, creo que esto es lo más sensato y sabio que ha dicho en todo lo que llevamos de juego."
+
+Flashback_DarkTower2_Melisenda = u"¡Pero no me vale que venga cualquier fulano y diciendo que es mi pareja perfecta, quiero que me lo demuestren. ¡Tengo una idea! ¿Porqué no me ayudas, Pusles? Haremos 3 pruebas, como cuando quieres ser un pirata. Y solo quien supere las 3 podrá casarse conmigo."
+
+Flashback_DarkTower2_Pusles = u"Mmm... 3 retos que solo podrán ser superados por los más hábiles... Suena interesante."
+
+Flashback_DarkTower2_Melisenda = u"Lo sé. Vete pensando mientras le enseño a Frédéric todos los juegos que tienes."
+
+Flashback_DarkTower2_Pusles = u"Para la primera prueba podríamos hacer una versión del acertijo de las ovejas y lo lobos, es un poco clásico pero me encanta ese puzzle. Aunque nunca he entendido que que los lobos sólo ataquen a las ovejas si las superan en número... ¡Mejor haremos una versión con caballeros y bandidos!"
+
+Flashback_DarkTower2_Pusles = u"Espera, que ha dicho que iba a hacer con el urón y mis puzzles?"
+
+#Después de flashback:
+
+Flashback_Tavern_Cazadora = u"Lo de poner a testificar al loro fue demasiado surealista. Y vale que Wright se agarre a un clavo ardiendo, pero que el juez acceda..."
+
+Flashback_Tavern_Barbaro = u"Siempre he pensado que ahí lo hicieron mal, siempre lo llaman \"loro\", pero aunque los colores sean propios de un loro, el animal era una cacatua, se distinguen por la gresta, de hecho diria que era una Aacatua Alba, pero las cacatuas suelen ser blancas, aunque hay algunas rosadas... De todos modos, reproducen lo que oyen literalmente, asique no veo por qué no tendría más valor que una grabadora."
+
+Flashback_Tavern_Nigromante = u"Y fue un caso especial, Von Karma se fue de la lengua y lo sugirió, y Nick tenía el derecho de aceptar cualquier sugerencia hecha por la fiscalía."
+
+Flashback_Tavern_Cazadora = u"Y que será lo próximo? Poner a testificar a un fantasma?"
+
+Flashback_Tavern_Nigromante = u"Para eso sería necesario que todos participaran en algún ritual espiritual con el cual invocar el alma del testigo, o si no, bastaría con emplear cortilegios de nigromancia avanzada para conseguir su materialización en el plano físico."
+
+Flashback_Tavern_Barbaro = u"Siempre que Nick tiene problemas viene Mia, que es un fantasma."
+
+Flashback_Tavern_Cazadora = u"Mía... Cuando usa el cuerpo de Maya bueno, pero lo de que cuando está Pearl siga con la ropa de la niña es un una sobrada."
+
+Flashback_Tavern_Pusles = u"¿Pero no estabais hablando de como superar las pruebas de la princesa Melisenda?"
+
+Flashback_Tavern_Nigromante = u"Especialmente porque en realidad no se está materializando, su aparición es únicamente en el plano etéreo que Nick puede ver por el magatama, así que debería ser igual a una ilusión y Mia podría aparecer con la ropa de siempre."
+
+Flashback_Tavern_Cazadora = u"No se yo si eso cambiaría mucho la situación."
+
+Flashback_Tavern_Barbaro = u"¿Y podría aparecer con un gatito de dos col..."
+
+Flashback_Tavern_Pusles = u"Ya está bien!

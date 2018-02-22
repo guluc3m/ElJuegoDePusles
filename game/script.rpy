@@ -5,69 +5,47 @@
 
 define e = Character("Eileen")
 
-# Declare characters used by this game.
-define h = Character('Herminda', color="#c8ffc8")
-define p = Character('Pusles', color="#c8c8ff")
-define k = Character('King', color='#c8c866')
-
-init python:
-    import text
-    """
-    Para poner los textos hay que poner:
-        "[text.<variable>]"
-    """
-
 # The game starts here.
 
-label start45:
+label start:
 
-    scene pub
-    with fade
+    window hide None
 
-    show pusles at right
-    with dissolve
+    # Put up the pong background, in the usual fashion.
+    scene bg pong field
 
-    show herminda_simple at left
-    with dissolve
+    # Run the pong minigame, and determine the winner.
+    #python:
+    #    ui.add(PongDisplayable())
+    #    winner = ui.interact(suppress_overlay=True, suppress_underlay=True)
 
-    p "[text.Flashback_PubConf_Pusles_1]"
+    python:
+        ui.add(InventoryDisplayable())
+        winner = ui.interact(suppress_overlay=True, suppress_underlay=True)
 
-    show herminda_simple at left
-    with dissolve
+    scene bg washington
+    show eileen vhappy
 
-    h "[text.Flashback_PubConf_Hermilda_1]"
+    window show None
 
-    p "[text.Flashback_PubConf_Pusles_2]"
+    if winner == "enemy":
 
-    h "[text.Flashback_PubConf_Hermilda_2]"
+        e "I win!"
 
-    p "[text.Flashback_PubConf_Pusles_3]"
+    else:
 
-    h "[text.Flashback_PubConf_Hermilda_3]"
+        e "You won! Congratulations."
 
-    show pusles escupir at right
-
-    p "[text.Flashback_PubConf_Pusles_4]"
-
-    h "[text.Flashback_PubConf_Hermilda_4]"
-
-    p "[text.Flashback_PubConf_Pusles_5]"
-
-    p "[text.Flashback_PubConf_Pusles_6]"
-
-    h "[text.Flashback_PubConf_Hermilda_5]"
-
-    p "[text.Flashback_PubConf_Pusles_7]"
 
 label castle:
 
     scene castle
     with fade
 
-    show king at left
-    with dissolve
-    show pusles at right
-    with dissolve
+
+    menu:
+        e "Would you like to play again?"
+
 
     p "[text.Flashback_Castle_Pusles_1]"
 
