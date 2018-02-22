@@ -19,7 +19,7 @@ init python:
 
 # The game starts here.
 
-label start:
+label start45:
 
     scene pub
     with fade
@@ -60,7 +60,7 @@ label start:
     p "[text.Flashback_PubConf_Pusles_7]"
 
 label castle:
-    
+
     scene castle
     with fade
 
@@ -70,14 +70,13 @@ label castle:
     with dissolve
 
     p "[text.Flashback_Castle_Pusles_1]"
-    
+
     k "[text.Flashback_Castle_King_1]"
-    
+
     p "[text.Flashback_Castle_Pusles_2]"
-    
+
     k "[text.Flashback_Castle_King_2]"
-    
+
     p "[text.Flashback_Castle_Pusles_3]"
-    
+
     k "[text.Flashback_Castle_King_3]"
-    
