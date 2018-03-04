@@ -136,4 +136,4 @@ Flashback_Tavern_Cazadora = u"No se yo si eso cambiaría mucho la situación."
 
 Flashback_Tavern_Barbaro = u"¿Y podría aparecer con un gatito de dos col..."
 
-Flashback_Tavern_Pusles = u"Ya está bien!
+Flashback_Tavern_Pusles = u"Ya está bien!"
