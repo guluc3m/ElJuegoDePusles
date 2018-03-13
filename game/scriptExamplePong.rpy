@@ -7,7 +7,7 @@ define e = Character("Eileen")
 
 # The game starts here.
 
-label start2:
+label start:
 
     window hide None
 
