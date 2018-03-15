@@ -3,6 +3,8 @@ El formato de los textos va a ser:
 <Capítulo>_<Escena>_<Personaje que habla><Numero de la intervención> = u"<texto>"
 """
 
+Intro_Tavern_
+
 Flashback_PubConf_Pusles_1 = u"Hmmmm Hermilda, este té rojo te ha salido mejor que nunca."
 Flashback_PubConf_Hermilda_1 = u"Más le vale, con lo que ha costado traerlo, ya puede venderse solo *sigh*"
 Flashback_PubConf_Pusles_2 = u"¿Por qué no me pones también unas pastas, y así lo mismo me tomo otro?"
@@ -94,6 +96,7 @@ Flashback_DarkTower2_Pusles_6 = u"Es verdad que sois la princesa Melisenda, pero
 Flashback_DarkTower2_Melisenda_7 = u"¡Pues Patatas!" #Discusión para la que ahora no estoy inspirado.
 
 
+
 Flashback_DarkTower2_Melisenda = u"Si yo no tengo problema en casarme, pero es que nadie cumple mis espectativas."
 
 Flashback_DarkTower2_Pusles = u"¿Y cuáles son sus espectativas?"
@@ -136,4 +139,4 @@ Flashback_Tavern_Cazadora = u"No se yo si eso cambiaría mucho la situación."
 
 Flashback_Tavern_Barbaro = u"¿Y podría aparecer con un gatito de dos col..."
 
-Flashback_Tavern_Pusles = u"Ya está bien!
+Flashback_Tavern_Pusles = u"Ya está bien!"
