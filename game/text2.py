@@ -1,7 +1,4 @@
 # pastoreo:
-
-Cazadora, nigromante, barbaro = u"..."
-
 Puzles = u"¿Vosotros quereis la mano de la princesa o estais de paso?"
 Harek = u"Claro que queremos la mano de la princesa, Pusles. Pero no somos unos genios y no sabemos que tenemos que hacer"
 Elrick = u"Hemos oido que la princesa ha elaborado tres pruebas, pero no ha puesto donde será la primera"

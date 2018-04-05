@@ -14,7 +14,9 @@ init python:
         def __init__(self):
             self.my_items = []
             self.max_size=15
+            #Actualizar la imagen
             self.image=Image("images/Inventario/background.jpg")
+            #No recuerdo que es esto
             self.px_1=234
             self.py_1=186
 
@@ -26,22 +28,22 @@ init python:
 
         def add_item(self, Item):
             if len(my_items) < max_size:
-                if has_item(Item.name) == False:
+                if has_item(Item.name)==False:
                     self.my_items.append(Item)
                     return True
                 else:
-                    print( "Ya tienes este objeto en tu inventario")
+                    print("Ya tienes este objeto en tu inventario")
                     return False
             else:
-                print( "No puedes guardar ese objeto porque ya tienes demasiados")
+                print("No puedes guardar ese objeto porque ya tienes demasiados")
                 return False
 
         def draw(self, screen, st, at):
             pi = renpy.render(self.image, WIDTH, HEIGHT, st, at)
             dist_x=195
             dist_y=195
-            centr_x=77
-            centr_y=78
+            centr_x=0
+            centr_y=0
             altura = 0
             posicion=0
             screen.blit(pi, (int(centr_x), int(centr_y)))
@@ -57,9 +59,10 @@ init python:
                     posicion=0
 
     class Item(object):
-        def __init__(self, name, image):
+        def __init__(self, name, image, description):
             self.arg = arg
             self.name=name
+            self.description=description
             self.image=Image(image)
             self.centerx = 10
             self.centery = 10
@@ -103,5 +106,12 @@ init python:
             else:
                 raise renpy.IgnoreEvent()
 
+            mouse_x, mouse_y = pygame.mouse.get_pos()
+            if pygame.mouse.get_pressed():
+                for i in range(0,14):
+                    if(mouse_x == self.my_items[i].centerx and mouse_y == self.my_items[i].centery):
+                        description = renpy.render(Text(my_items[i].description, size=36), WIDTH, HEIGHT, st, at)
+                        r.blit(description, (WIDTH/2-100, 25))
+                        #Añadir como condición que haga click en esa posición
         def visit(self):
             return []
