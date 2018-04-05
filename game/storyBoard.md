@@ -20,9 +20,14 @@ La Primera prueba es una competición de pastoreo, cada pretendiente tiene que e
 Pusles tiene que ayudar a los 3 pretendientes a conseguir su animal (gato pastor, perro zombi, y ¿lobo?), convencer al pastor de que le deje las ovejas, para ello debe conseguirle una botella de su bebida favorita, el tabernero se la dará tras servir de camarero un rato.
 
 #La segunda prueba
+La segunda prueba consistira en love letters
 
+Puzles recibira una carta de la princesa donde le dirá que quiere que jueguen love letters por ella.
 
+Lo primero, pusles necesita una baraja, para ello requiere de un artista que pinte las cartas. tendrá que localizar un pintor o pintora y traerle los materiales, esto llevará a un minijuego donde tendrá que conseguir pintura a base de recogerla de una estatneria donde va correteando con unos cazos. hacer referencia a los colores pintura
+Hay un loco que tambien quiere meterse a por la mano de la princesa.
 
 #La tercera prueba
+Será una cena de alta clase, melisenda aparece al final de la anterior prueba invita a palacio a los 3 pretendientes para una cena con clase, allí les hará una serie de preguntas y escogerá a quien sea el proximo rey
 
 #Final
