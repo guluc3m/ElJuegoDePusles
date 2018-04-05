@@ -14,7 +14,8 @@ init python:
         def __init__(self):
             self.my_items = []
             self.max_size=15
-            self.image=Image("images/Inventario/background.jpg")
+            self.image=Image("images/Inventario/inventario_UIBG.png")
+            #No recuerdo que es esto
             self.px_1=234
             self.py_1=186
 
@@ -40,8 +41,8 @@ init python:
             pi = renpy.render(self.image, WIDTH, HEIGHT, st, at)
             dist_x=195
             dist_y=195
-            centr_x=77
-            centr_y=78
+            centr_x=0
+            centr_y=0
             altura = 0
             posicion=0
             screen.blit(pi, (int(centr_x), int(centr_y)))
