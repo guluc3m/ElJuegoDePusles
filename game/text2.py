@@ -1,5 +1,5 @@
 # pastoreo:
-
+'''
 Cazadora, nigromante, barbaro = u"..."
 
 Pusles = u"Vosotros quereis la mano de la princesa o estais de paso?"
@@ -16,4 +16,4 @@ Puzles = u"Tengo eleeción"
 Barbaro = "muchas gracias pusles"
 Puzles = u"Esta bien, os ayudaré, pero quiero que recordeis una cosa: Se dice PuZles"
 
-Puzles = u"Bien, Presupondré que ellos 
+Puzles = u"Bien, Presupondré que ellos '''
