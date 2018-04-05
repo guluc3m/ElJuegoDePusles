@@ -8,36 +8,49 @@ init python:
     HEIGHT = config.screen_height
 
     #Esto dibuja la balsa
-'''como hago el recuento de lobos y ovejas en cada orilla???'''
+    '''como hago el recuento de lobos y ovejas en cada orilla???'''
 
     class Balsa():
         def __init__(self):
+            self.time = -1
             self.image = Image(".png")
             self.centerx = WIDTH/4
             self.centery = HEIGHT/2  #Lo sitúo a la izquierda por debajo de la mitad de la pantalla
             self.height = HEIGHT/6
             self.width = HEIGHT/6
+            self.flag = False
             self.bicho1 = None
             self.bicho2 = None
             self.orilla_izq = True
-            self.permiso_mover = True '''creo que lo voy a usar para la duda de arriba'''
+            self.permiso_mover = True
 
-            '''necesito funcion para las posiciones de los bichos'''
-        '''necesito def subir_animalicos_a_la_barca'''
+
+
 
         def seleccionado(self, animalico):
             if(animalico.selected == False):
-                self.lobitos[i].self.selected = True
+                animalico.selected = True
                 if(self.bicho1 == None):
-                    self.bicho1 = self.lobitos[i]
+                    self.bicho1 = animalico
+                elif(self.bicho != None && self.bicho2 == None):
+                    self.bicho2 = animalico
                 else:
-                    self.bicho2 = self.lobitos[i]
+
+                    self.flag==True
+
             else:
-                self.lobitos[i].self.selected = False
+                self.animales[i].selected = False
 
 
-        def subir_animalicos_a_la_barca(self, animalico):
-        #    self.lobitos[i].self.centerx = self.balsa.self.centerx    #Igualar la pos raton a animalicos para ponerlos sobre la balsa
+        def subir_animalicos_a_la_barca(self):
+            if (self.bicho1 != None):
+                self.bicho1.centerx = self.centerx
+                self.bicho1.centery = self.centery
+            if(self.bicho2 != None):
+                self.bicho2.centerx = self.centerx +10
+                self.bicho2.centerx = self.centery
+
+
 
 
         def mover(self, time, keys):
@@ -61,14 +74,22 @@ init python:
             # renpy.render returns a Render object, which we can
             # blit to the Render we're making.
             screen.blit(pi, (int(self.centerx), int(self.centery)))
+            if(self.flag == True):
+                not_possible = renpy.render(Text("Not possible", size=36), WIDTH, HEIGHT, st, at)
+                r.blit(not_possible, (WIDTH/2-100, 25))
+                if(self.time == -1):
+                    self.time = st
+                elif(st - self.time > 1.5):
+                    self.flag = False
+                    self.time = -1
 
 
-    class Animalicos():
+    class Animalico():
 
-        def _init_(self):
+        def __init__(self):
           self.image = Image(".png")
           self.centerx = (WIDTH/5)
-          self.centery = HEIGHT/2  #Lo sitúo a la izquierda por debajo de la mitad de la pantalla
+          self.centery = HEIGHT/2  '''Lo sitúo a la izquierda por debajo de la mitad de la pantalla'''
           self.height = HEIGHT/6
           self.width = WIDTH/10  #Por ejemplo
           self.selected = False
@@ -76,12 +97,12 @@ init python:
 
         def mover(self, time, keys):
             if (self.selected == True):
-                 self.centerx = Balsa.self.centerx;
-                 if (keys[K_RIGHT] && self.centerx == WEIGHT/5): #Orilla izquierda a derecha
+                 self.centerx = Balsa.centerx;
+                 if (keys[K_RIGHT] && self.centerx == WEIGHT/5): '''Orilla izquierda a derecha'''
                      self.centerx = WEIGHT/5*4
                      self.selected = False
 
-                 if (keys[K_LEFT] && self.centerx == WEIGHT/5*4): #Orilla derecha a izquierda
+                 if (keys[K_LEFT] && self.centerx == WEIGHT/5*4): '''Orilla derecha a izquierda'''
                      self.centerx = WEIGHT/5
                      self.selected = False
 
@@ -93,17 +114,21 @@ init python:
             screen.blit(pi, (int(self.centerx), int(self.centery)))
 
 
-    class Lobos(Animalicos):
+    class Lobo(Animalico):
 
-        def _init_(self, desplazamiento):
-            super(Lobos, self).__init__(self)
+        def __init__(self, desplazamiento):
+            super(Lobo, self).__init__(self)
+            self.image = Image(".png")
+            self.centerx = self.centerx + desplazamiento
 
 
+    class Oveja(Animalico):
 
-    class Ovejas(Animalicos):
-
-        def _init_(self, desplazamiento):
-            super(Ovejas, self).__init__(self)
+        def __init__(self, desplazamiento):
+            super(Oveja, self).__init__(self)
+            self.image = Image(".png")
+            self.centery = self.centery - 10
+            self.centerx = self.centerx + desplazamiento
 
 
 
@@ -118,25 +143,15 @@ init python:
             renpy.Displayable.__init__(self)
 
             ''' Carga de la balsa '''
-            self.balsa = Class_Balsa()
+            self.balsa = Balsa()
 
             ''' Carga de los 3 lobos y las 3 ovejas '''
             self.animales = []
-            for i in range(0,3):
-                animales.append(Lobos(10*i))
+            for i in range(0,6):
+                animales.append(Lobo(10*i))
+                animales.append(Oveja(10*i))
 
-
-            ''' Carga de las 3 ovejas '''
-            self.ovejitas = []
-            for i in range(0,3): '''Separo cada lobo 10 pixeles  ¿esta bien? --> SIIII'''
-                self.ovejitas.append(Oveja(10*i))
-                #self.ovejitas[i].self.centerx += 10*i
-
-
-
-
-
-            '''Pinto todo'''
+        '''Pinto todo'''
         def render(self, width, height, st, at):
             # Similar al screen de pygame
             r = renpy.Render(width, height)
@@ -151,35 +166,41 @@ init python:
             # frame.
             renpy.redraw(self, 0)
 
-            for i in range(0,3):
-            self.lobitos[i].draw(r, st, at)
-
-            for i in range(0,3):
-            self.ovejas[i].draw(r, st, at)
-
+            for i in range(0,6):
+            self.animales[i].draw(r, st, at)
             self.balsa.draw(r, st, at)
-
             # Return the Render object.
             return r
 
 
 
 
-
-        def events(): #Clicar sobre animalicos
+        '''Clicar sobre animalicos'''
+        def event(self, ev, x, y, st):
             if pygame.mouse.get_pressed():
-                for i in range(0,3):
-                    if pygame.mouse.get_pos()[0] == self.lobitos[i].self.centerx &&  pygame.mouse.get_pos()[1] == self.lobitos[i].self.centery:# && self.lobitos[i].self.orilla_izq == self.balsa.self.orilla_izq:
-                        self.barca.subir_animalicos_a_la_barca(lobitos[i])
+                for i in range(0,6):
+                    if(pygame.mouse.get_pos()[0] == self.animales[i].centerx &&
+                    pygame.mouse.get_pos()[1] == self.animales[i].centery &&
+                    self.animales[i].orilla_izq == self.balsa.orilla_izq):
+                        self.barca.seleccionado(self,self.animales[i])
+                        self.barca.subir_animalico_a_la_barca(self)
 
 
 
-#debo crear funcion en el displayable para el movimiento?????? --> SI
+        #debo crear funcion en el displayable para el movimiento?????? --> SI
+
+        def check_rules(self):
+            num_lobos = 0
+            nom_ovejas = 0
+            for i in range(0,6):
+                if(isinstance(self.animales[i], Lobo)):
+                    num_lobos += 1
+                elif(isinstance(self.animales[i], Oveja)):
+                    num_ovejas += 1
+
+
 
 
         def movement(self, time, keys):
-            for i in range(0.3):
-                self.lobitos[i].mover(self, time, keys)
-
-            for i in range(0,3):
-                self.ovejitas[i].mover(self, time, keys)
+            for i in range(0.6):
+                self.animales[i].mover(self, time, keys)
