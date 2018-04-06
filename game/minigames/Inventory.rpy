@@ -15,10 +15,7 @@ init python:
             self.my_items = []
             self.max_size=15
             #Actualizar la imagen
-            self.image=Image("images/Inventario/background.jpg")
-            #No recuerdo que es esto
-            self.px_1=234
-            self.py_1=186
+            self.image=Image("images/Inventario/inventario_UIBG.png")
 
         def has_item(self, item):
             if item in my_items:
@@ -106,10 +103,14 @@ init python:
             else:
                 raise renpy.IgnoreEvent()
 
+            #mouse.get_pos() deuelve un valor para cada coordenada, de ahí ambas variables
             mouse_x, mouse_y = pygame.mouse.get_pos()
+            #mouse.get_pressed() devuelve una tupla con un elemento para cada botón del mouse siendo 1 si es presionado
+            mouse_pressed = pygame.mouse.get_pressed()
+
             if pygame.mouse.get_pressed():
                 for i in range(0,14):
-                    if(mouse_x == self.my_items[i].centerx and mouse_y == self.my_items[i].centery):
+                    if(mouse_x == self.my_items[i].centerx and mouse_y == self.my_items[i].centery and (mouse_pressed[0] or mouse_pressed[1] or mouse_pressed[2])==1):
                         description = renpy.render(Text(my_items[i].description, size=36), WIDTH, HEIGHT, st, at)
                         r.blit(description, (WIDTH/2-100, 25))
                         #Añadir como condición que haga click en esa posición
