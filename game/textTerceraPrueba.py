@@ -26,4 +26,12 @@ Alida = u"No lo sé... Tengo ropa para la ocasión... Pero... son vestidos... de
 Puzzles = u"Vaya, eso es un imprevisto muy inesperado..."
 Alida = u"..."
 Puzzles = u"Quizá pudiera dejarte alguno de mis trajes, aunque no sé si le sentarían bien a tu varonil cuerpo"
+Alida = u"Puzzles... Creo que debería contarte algo..."
+Puzzles = u"Tomáte tu tiempo, seguro que es algo importante."
 
+# Alida suspira y se quita las gafas y la chaqueta.
+Alida = u"Mi verdadero nombre es Alida. Y soy una mujer."
+Puzzles = u"... Bueno. Resueltos estos problemas de identidad, escoge el vestido que más te guste mientras preparo la mesa para enseñarte las normas de etiqueta."
+Alida = u"¡Voy!"
+#Transición
+Puzzles = u"Esta va a ser la única oportunidad que tenga la princesa Melisenda para saber algo de tí. Así que tanto ella como su padre, el Rey Sapiensa, te preguntarán cosas como 
