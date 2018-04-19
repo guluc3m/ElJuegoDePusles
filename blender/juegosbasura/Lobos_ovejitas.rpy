@@ -13,7 +13,7 @@ init python:
     class Balsa():
         def __init__(self):
             self.time = -1
-            self.image = Image(".png")
+            self.image = Image("balsa.png")
             self.centerx = WIDTH/4
             self.centery = HEIGHT/2  #Lo sitúo a la izquierda por debajo de la mitad de la pantalla
             self.height = HEIGHT/6
@@ -87,7 +87,7 @@ init python:
     class Animalico():
 
         def __init__(self):
-          self.image = Image(".png")
+          self.image = Image("lobo.png")
           self.centerx = (WIDTH/5)
           self.centery = HEIGHT/2  '''Lo sitúo a la izquierda por debajo de la mitad de la pantalla'''
           self.height = HEIGHT/6
@@ -118,7 +118,7 @@ init python:
 
         def __init__(self, desplazamiento):
             super(Lobo, self).__init__(self)
-            self.image = Image(".png")
+            self.image = Image("lobo.png")
             self.centerx = self.centerx + desplazamiento
 
 
@@ -126,7 +126,7 @@ init python:
 
         def __init__(self, desplazamiento):
             super(Oveja, self).__init__(self)
-            self.image = Image(".png")
+            self.image = Image("oveja.png")
             self.centery = self.centery - 10
             self.centerx = self.centerx + desplazamiento
 
