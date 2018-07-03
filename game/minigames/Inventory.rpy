@@ -1,9 +1,5 @@
 init python:
 
-    #https://www.youtube.com/watch?v=kSO5iJGGFK0
-    #K_i sirve para capturar por pantalla
-
-    import random
     import pygame_sdl2 as pygame
     from pygame.locals import *
 
@@ -18,14 +14,14 @@ init python:
             self.image=Image("images/Inventario/inventario_UIBG.png")
 
         def has_item(self, item):
-            if item in my_items:
+            if item in self.my_items:
                 return True
             else:
                 return False
 
         def add_item(self, Item):
-            if len(my_items) < max_size:
-                if has_item(Item.name)==False:
+            if len(self.my_items) < self.max_size:
+                if not self.has_item(Item.name):
                     self.my_items.append(Item)
                     return True
                 else:
@@ -39,58 +35,62 @@ init python:
             pi = renpy.render(self.image, WIDTH, HEIGHT, st, at)
             dist_x=195
             dist_y=195
-            centr_x=0
-            centr_y=0
+            if len(self.my_items)>0:
+                center_x=self.my_items[0].centerx
+                center_y=self.my_items[0].centery
+            else:
+                center_x=0
+                center_y=0
             altura = 0
             posicion=0
-            screen.blit(pi, (int(centr_x), int(centr_y)))
+            screen.blit(pi, (int(center_x), int(center_y)))
+            
             for item in self.my_items:
                 #Pintamos cada objeto
-                item.centerx = (centr_x+dist_x)*(posicion+1)
-                item.centery = (centr_y+dist_y)*altura
-                item.draw(screen, st, at)
+                item.centerx = (center_x+dist_x)*(posicion+1)
+                item.centery = (center_y+dist_y)*(altura+1)
                 posicion+=1
                 #Hacemos salto de línea si llega al final de la misma
-                if posicion==5 or posicion==10:
+                if posicion>=5:
                     altura+=1
                     posicion=0
 
     class Item(object):
         def __init__(self, name, image, description):
-            self.arg = arg
-            self.name=name
-            self.description=description
+            #self.arg = arg
+            self.name=str(name)
             self.image=Image(image)
-            self.centerx = 10
-            self.centery = 10
+            self.description=description
+            self.centerx = 120
+            self.centery = 120
 
         def draw(self, screen, st, at):
             pi = renpy.render(self.image, WIDTH, HEIGHT, st, at)
             screen.blit(pi, (int(self.centerx), int(self.centery)))
 
-        def use():
-            pass
-
     class InventoryDisplayable(renpy.Displayable):
         def __init__(self):
             renpy.Displayable.__init__(self)
 
-            "Cargamos el inventario"
+            #Cargamos el inventario
             self.inventory = Inventory()
             self.oldst = None
-
 
         def render(self, width, height, st, at):
             r=renpy.Render(width, height)
 
+            # Para poder saber el tiempo
+            if self.oldst is None:
+                self.oldst = st
+            dtime = st - self.oldst
             self.oldst = st
-
-            #if self.oldst is None:
-            #    self.oldst = st
 
             renpy.redraw(self, 0)
 
             self.inventory.draw(r, st, at)
+
+            for i in self.inventory.my_items:
+                self.inventory.my_items[i].draw(r, st, at)
 
             return r
 
@@ -105,14 +105,11 @@ init python:
 
             #mouse.get_pos() deuelve un valor para cada coordenada, de ahí ambas variables
             mouse_x, mouse_y = pygame.mouse.get_pos()
-            #mouse.get_pressed() devuelve una tupla con un elemento para cada botón del mouse siendo 1 si es presionado
-            mouse_pressed = pygame.mouse.get_pressed()
 
             if pygame.mouse.get_pressed():
-                for i in range(0,14):
-                    if(mouse_x == self.my_items[i].centerx and mouse_y == self.my_items[i].centery and (mouse_pressed[0] or mouse_pressed[1] or mouse_pressed[2])==1):
-                        description = renpy.render(Text(my_items[i].description, size=36), WIDTH, HEIGHT, st, at)
+                for i in range(0,15):
+                    if mouse_x == range(self.my_items[i].centerx-120, self.my_items[i].centerx+120) and mouse_y == range(self.my_items[i].centery-120, self.my_items[i].centery+120) and pygame.mouse.get_pressed():
+                        description = renpy.render(Text(self.my_items[i].description, size=36), WIDTH, HEIGHT, st, at)
                         r.blit(description, (WIDTH/2-100, 25))
-                        #Añadir como condición que haga click en esa posición
         def visit(self):
             return []
