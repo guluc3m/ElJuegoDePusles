@@ -54,7 +54,7 @@ init python:
         def reset(self):
             self.centerx = WIDTH / 2
             self.centery = HEIGHT / 2
-            if random.random() > 0.45: 
+            if random.random() > 0.45:
                 mult1 = -1
                 mult2 = 1
             else:
@@ -234,4 +234,3 @@ init python:
 
         def visit(self):
             return [self.player, self.enemy, self.start]
-
