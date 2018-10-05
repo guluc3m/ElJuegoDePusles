@@ -6,15 +6,23 @@ init python:
     WIDTH = config.screen_width
     HEIGHT = config.screen_height
 
+    SIZE = 160
+
     class Inventory:
         def __init__(self):
             self.my_items = []
+            self.my_names=[]
+            for i in self.my_items:
+                self.my_names.append(i.name)
             self.max_size=15
             #Actualizar la imagen
-            self.image=Image("images/Inventario/inventario_UIBG.png")
+            self.image=im.Scale("images/Inventario/inventario_UIBG.png", WIDTH, HEIGHT)
 
-        def has_item(self, item):
-            if item in self.my_items:
+            self.initx=160
+            self.inity=85
+
+        def has_item(self, name):
+            if name in self.my_names:
                 return True
             else:
                 return False
@@ -31,22 +39,23 @@ init python:
                 print("No puedes guardar ese objeto porque ya tienes demasiados")
                 return False
 
+        def remove_item(self, Item):
+            self.my_items.remove(Item)
+            self.my_names.remove(Item.name)
+
         def draw(self, screen, st, at):
             pi = renpy.render(self.image, WIDTH, HEIGHT, st, at)
             screen.blit(pi, (0, 0))
-            dist_x=185
-            dist_y=195
-            if len(self.my_items)>0:
-                topleft_x=self.my_items[0].topleft_x
-                topleft_y=self.my_items[0].topleft_y
+            dist_x=40
+            dist_y=35
 
             altura = 0
             posicion=0
 
             for item in self.my_items:
-                #Pintamos cada objeto
-                item.topleft_x = topleft_x+(dist_x*posicion)
-                item.topleft_y = topleft_y+(dist_y*altura)
+                #Asignamos las coordenadas de cada celda
+                item.topleft_x = self.initx+(dist_x*posicion)+(SIZE*posicion)
+                item.topleft_y = self.inity+(dist_y*altura)+(SIZE*altura)
                 posicion+=1
                 #Hacemos salto de línea si llega al final de la misma
                 if posicion>=5:
@@ -56,12 +65,11 @@ init python:
 
     class Item(object):
         def __init__(self, name, image, description):
-            #self.arg = arg
             self.name=str(name)
-            self.image=im.Scale(image, 160, 160)
-            self.description=description
-            self.topleft_y = 86
-            self.topleft_x = 175
+            self.image=im.Scale(image, SIZE, SIZE)
+            self.description=str(description)
+            self.topleft_x = 0
+            self.topleft_y = 0
             self.paint_description = False
 
         def draw(self, screen, st, at):
@@ -104,11 +112,12 @@ init python:
 
             #mouse.get_pos() deuelve un valor para cada coordenada, de ahí ambas variables
             mouse_x, mouse_y = pygame.mouse.get_pos()
+            print('Mouse(x,y):' + str(mouse_x) + ' ' +  str(mouse_y))
 
             #if pygame.mouse.get_pressed()[0]:
             for i in self.inventory.my_items:
-                if mouse_x in range(i.topleft_x, i.topleft_x+160) and mouse_y in range(i.topleft_y, i.topleft_y + 160):
-                    print(mouse_x, mouse_y, i.topleft_x, i.topleft_y)
+                if (mouse_x in range(i.topleft_x+57, i.topleft_x+216+57)) and (mouse_y in range(i.topleft_y+31, i.topleft_y+216+31)):
+
                     i.paint_description=True
                 else :
                     i.paint_description=False
